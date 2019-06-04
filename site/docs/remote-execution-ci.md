@@ -44,7 +44,16 @@ Before completing the steps in this document, ensure the following:
 
 2.  Add the[`bazel-toolchains`](https://github.com/bazelbuild/bazel-toolchains)
     GitHub repository to your `WORKSPACE` file, pinned to the
-    [latest release](https://releases.bazel.build/bazel-toolchains.html).
+    [latest release](https://releases.bazel.build/bazel-toolchains.html).  Also
+    add an 'rbe_autoconfig' target with name 'buildkite_config':
+
+```
+load("@bazel_toolchains//rules:rbe_repo.bzl", "rbe_autoconfig")
+
+# Creates toolchain configuration for remote execution with BuildKite CI
+# for rbe_ubuntu1604.
+rbe_autoconfig(name = "buildkite_config")
+```
 
 3.  Send a pull request with your changes to the `presubmit.yml` file. (See
     [example pull request](https://github.com/bazelbuild/rules_rust/commit/db141526d89d00748404856524cedd7db8939c35).)
