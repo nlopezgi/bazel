@@ -45,7 +45,7 @@ Before completing the steps in this document, ensure the following:
 2.  Add the[`bazel-toolchains`](https://github.com/bazelbuild/bazel-toolchains)
     GitHub repository to your `WORKSPACE` file, pinned to the
     [latest release](https://releases.bazel.build/bazel-toolchains.html).  Also
-    add an 'rbe_autoconfig' target with name 'buildkite_config':
+    add an `rbe_autoconfig` target with name `buildkite_config`:
 
 ```
 load("@bazel_toolchains//rules:rbe_repo.bzl", "rbe_autoconfig")
